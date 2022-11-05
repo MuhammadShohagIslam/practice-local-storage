@@ -1,6 +1,6 @@
 /*
- *** Add Data To The Local Storage ***
- */
+    *** Add Data To The Local Storage ***
+*/
 const addDataToLocalStorage = (id) => {
     // step1: create a object which one we want to store into local storage
     const shoppingCart = {};
@@ -28,8 +28,8 @@ const addDataToLocalStorage = (id) => {
 };
 
 /*
- *** Get Data From Local Storage ***
- */
+    *** Get Data From Local Storage ***
+*/
 const getDataFromLocalStorage = () => {
     // step1: create object for storing data from local storage
     const shoppingCart = {};
@@ -45,3 +45,25 @@ const getDataFromLocalStorage = () => {
 
     return shoppingCart;
 };
+
+/*
+    *** Remove Data By Specific Id From the Local Storage
+*/
+const removeDataFromLocalStorage = (id) => {
+    // step1: get data from the localStorage
+    const storedCart = localStorage.getItem("shopping-cart");
+
+    // step2: check shoppingCart it has or not in the local storage
+    // if it has, converting stringify data to object
+    // then check id has in this object, delete id from this object
+    // finally set updated object into local storage
+    if (storedCart) {
+        const shoppingCart = JSON.parse(storedCart);
+        if (id in shoppingCart) {
+            delete shoppingCart[id];
+            localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+        }
+    }
+};
+
+
