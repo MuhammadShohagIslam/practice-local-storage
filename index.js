@@ -47,7 +47,7 @@ const getDataFromLocalStorage = () => {
 };
 
 /*
-    *** Remove Data By Specific Id From the Local Storage
+    *** Remove Data By Specific Id From the Local Storage ***
 */
 const removeDataByIdFromLocalStorage = (id) => {
     // step1: get data from the localStorage
@@ -67,7 +67,7 @@ const removeDataByIdFromLocalStorage = (id) => {
 };
 
 /*
-    *** Permanently Remove Data From Local Storage
+    *** Permanently Remove Data From Local Storage ***
 */
 const permanentlyRemovedFullDataFromLocalStorage = () => {
     localStorage.removeItem("shopping-cart");
